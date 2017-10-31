@@ -36,7 +36,7 @@ vertex(WW*i, sin(cnt-mult*i)*diff+WH);
 vertex(WH*50, WW*0);
 vertex(WH*0, WW*2);
 endShape(CLOSE);
-frameRate(0.5);
+frameRate(1);
   
 if(diff=10)
   mult = mult + 15
@@ -58,4 +58,13 @@ function clouds() {
      arc (100, 100, 60, 90, PI, PI);
      arc (130, 110, 60, 60, PI, TWO_PI);
      arc (80,110, 60, 60, PI, TWO_PI);
+  
+    arc (300, 100, 60, 90, PI, PI);
+     arc (330, 110, 60, 60, PI, TWO_PI);
+     arc (280,110, 60, 60, PI, TWO_PI);
+  
+  
+    arc (500, 100, 60, 90, PI, PI);
+     arc (530, 110, 60, 60, PI, TWO_PI);
+     arc (480,110, 60, 60, PI, TWO_PI);
 }
