@@ -2,7 +2,6 @@ var clouds=[];
 cnt = 0
 mult = 60
 diff = 0.02
-var b1;
 var x = 0;
 
 function setup() {
@@ -15,6 +14,11 @@ function setup() {
   q = new wave(100,110,60,90);
   p = new wave(200,400,60,90);
   r = new wave (400,200,60,90);
+  s = new wave (700,350,60,90);
+  t = new wave (900,100,60,90);
+  w = new wave (1200,200,60,90);
+
+
 
 
 } 
@@ -22,7 +26,7 @@ function setup() {
 function draw() 
 
 {
- background(135,206,250); 
+ background(0); 
 
   everything();
   
@@ -33,19 +37,31 @@ function draw()
     q.ypos+=random(-20,20);
     p.ypos+=random(-20,30);
     r.ypos+=random (-20,30);
+    s.ypos+=random(-20,20);
+    t.ypos+=random(-20,30);
+    w.ypos+=random (-20,30);
     q.xpos += random(-20,20);
     p.xpos+=random(-20,30);
     r.xpos+=random (-20,30);
+    s.xpos += random(-20,20);
+    t.xpos+=random(-20,30);
+    w.xpos+=random (-20,30);
+
 
 
   console.log("hhh"+q.xpos);
   q.spiral();
   p.spiral();
   r.spiral();
+  s.spiral();
+  t.spiral();
+  w.spiral();
 
-q.burst();
+ q.burst();
  p.burst();
  r.burst();
+
+
 
   //b1.spiral(clouds[0]);
 }
@@ -97,22 +113,27 @@ spiral()
    fill (202,220,255);
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
 
+
    arc (this.xpos, this.ypos, random(10,this.hgt),  random(10,this.wdth), PI, PI);
    arc (this.xpos+30, this.ypos, random(20,this.hgt),random(20,this.wdth), PI, TWO_PI);
    arc (this.xpos-20,this.ypos, random(30,this.hgt), random(30, this.wdth), PI, TWO_PI);
-  
+   arc (this.xpos, this.ypos, random(10,this.hgt),  random(10,this.wdth), PI, PI);
+   arc (this.xpos+30, this.ypos, random(20,this.hgt),random(20,this.wdth), PI, TWO_PI);
+   arc (this.xpos-20,this.ypos, random(30,this.hgt), random(30, this.wdth), PI, TWO_PI);
   }
 burst()
 {
+
   console.log("hhhhhhhhhhhhhhhh");
-   for(var i = 0;  i<= width; i+=50){
-    for(var j = 0; j <= height; j+=50){
-  applyMatrix(1 , 0, 0, 1 , 0, 0);
+   for(var i = 0;  i<= mouseX; i+=20){
+    for(var j = 0; j <= mouseY; j+=20){
+  
     fill (88,145,212);
- 
-//translate(this.xpos, this.ypos);
-//rotate(PI/1.0);
-  ellipse(i,j,50,5);
-}}
-}
-}
+
+translate(this.xpos, this.ypos);
+
+  //applyMatrix(1, 10, 10, 100, 40, 50);
+rotate(PI/2.0);
+//sphere(50);
+ellipse(i,j,mouseX,mouseY);
+}}}}
