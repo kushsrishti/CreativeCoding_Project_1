@@ -26,7 +26,7 @@ function setup() {
 function draw() 
 
 {
- background(0); 
+ background(109,167,255); 
 
   everything();
   
@@ -70,7 +70,7 @@ function everything()
 {
 
   noStroke();
-  fill(212,112,100)
+  fill(43,36,59)
   cnt = cnt + 0.02
   beginShape();
   for(var i=0; i<501; i++){
@@ -110,7 +110,7 @@ spiral()
   {
 
    noStroke();
-   fill (202,220,255);
+   fill (255,66,60);
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
 
 
@@ -128,12 +128,12 @@ burst()
    for(var i = 0;  i<= mouseX; i+=20){
     for(var j = 0; j <= mouseY; j+=20){
   
-    fill (88,145,212);
+    fill (255,189,46);
 
-translate(this.xpos, this.ypos);
+translate(this.xpos+100, this.ypos+10);
 
   //applyMatrix(1, 10, 10, 100, 40, 50);
 rotate(PI/2.0);
 //sphere(50);
-ellipse(i,j,mouseX,mouseY);
+ellipse(i,j,5,50);
 }}}}
