@@ -7,6 +7,8 @@ var x = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight); 
+
+ 
   WW = windowWidth/500;
   WH = windowHeight/10;
 
@@ -20,8 +22,8 @@ function setup() {
 function draw() 
 
 {
+ background(135,206,250); 
 
-  background(135,206,250); 
   everything();
   
  
@@ -42,6 +44,8 @@ function draw()
   r.spiral();
 
 q.burst();
+ p.burst();
+ r.burst();
 
   //b1.spiral(clouds[0]);
 }
@@ -56,8 +60,8 @@ function everything()
   for(var i=0; i<501; i++){
     vertex(WW*i, sin(cnt-mult*i)*diff+WH);
   }
-  vertex(WH*50, WW*0);
-  vertex(WH*0, WW*2);
+  vertex(WH*100, WW*0);
+  vertex(WH*0, WW*0);
   endShape(CLOSE);
   frameRate(1);
   
@@ -101,10 +105,14 @@ spiral()
 burst()
 {
   console.log("hhhhhhhhhhhhhhhh");
-   for(var i = 0;  i<= width; i+=100){
-    for(var j = 0; j <= height; j+=100){
+   for(var i = 0;  i<= width; i+=50){
+    for(var j = 0; j <= height; j+=50){
+
     fill (88,145,212);
-  ellipse(i,j,10,10);}
-}
+ 
+translate(this.xpos, this.ypos);
+rotate(PI/1.0);
+  ellipse(i,j,5,5);
+}}
 }
 }
