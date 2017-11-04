@@ -107,12 +107,12 @@ burst()
   console.log("hhhhhhhhhhhhhhhh");
    for(var i = 0;  i<= width; i+=50){
     for(var j = 0; j <= height; j+=50){
-
+  applyMatrix(1 , 0, 0, 1 , 0, 0);
     fill (88,145,212);
  
-translate(this.xpos, this.ypos);
-rotate(PI/1.0);
-  ellipse(i,j,5,5);
+//translate(this.xpos, this.ypos);
+//rotate(PI/1.0);
+  ellipse(i,j,50,5);
 }}
 }
 }
