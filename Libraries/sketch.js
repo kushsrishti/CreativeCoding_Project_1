@@ -67,6 +67,7 @@ function everything()
   for(var i=0; i<600; i++)
   {
    ///this produces the waves 
+   ///sin produces waves, refernce p5 ref
     vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
   }
    /// produces waves according to the screen 
