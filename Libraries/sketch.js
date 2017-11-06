@@ -1,7 +1,7 @@
 var clouds=[]; ///array clouds
 cnt = 0;
 mult = 60;
-diff = 400;
+diff = 0;
 
 function setup() 
   {
@@ -68,7 +68,7 @@ function everything()
    ///this produces the waves 
    
    ////the sin produces the wavy effect - https://p5js.org/reference/#/p5/sin
-    vertex(WW*i, sin(cnt-diff*i)*400+WH); 
+    vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
   }
    /// produces waves according to the screen 
     vertex(WH*100, WW*0);
@@ -76,10 +76,10 @@ function everything()
     vertex(WH*0, WW*400);
     endShape(CLOSE);
     frameRate(0.7);
-  //if ( diff=400) 
- // { 
-   // mult = mult - 10
-  
+  if ( diff=400) 
+  { 
+    mult = mult - 10
+  }
 }
 /// this controls the height, width, x & y positions of the orange arcs 
 class Wave 
