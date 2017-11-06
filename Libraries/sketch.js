@@ -66,6 +66,8 @@ function everything()
   for(var i=0; i<600; i++)
   {
    ///this produces the waves 
+   
+   ////the sin produces the wavy effect - https://p5js.org/reference/#/p5/sin
     vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
   }
    /// produces waves according to the screen 
