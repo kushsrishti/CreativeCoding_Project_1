@@ -77,21 +77,15 @@ function everything()
     vertex(WW*i, sin(cnt-mult*i)*diff+WH);
   }
   vertex(WH*100, WW*0);
-  vertex(WH*0, WW*0);
+  vertex(WH*0, WW*400);
   endShape(CLOSE);
   frameRate(1);
   
   if(diff=10)
     mult = mult + 15
-  if ( diff=200)
+  if ( diff=400)
     mult = mult - 1
-    
-  if (mouseY)
-    diff = diff + 4
-  if (mouseX)
-    diff = diff - 0.02
-
-}
+  }
 
 class wave {
   
@@ -125,15 +119,29 @@ burst()
 {
 
   console.log("hhhhhhhhhhhhhhhh");
-   for(var i = 0;  i<= mouseX; i+=20){
-    for(var j = 0; j <= mouseY; j+=20){
+   for(var i = 0;  i<= mouseX; i+=20)
+   {
+    for(var j = 0; j <= mouseY; j+=20)
+    {
   
     fill (255,189,46);
 
-translate(this.xpos+100, this.ypos+10);
+//translate(this.xpos+100, this.ypos+10);
 
   //applyMatrix(1, 10, 10, 100, 40, 50);
 rotate(PI/2.0);
 //sphere(50);
-ellipse(i,j,5,50);
-}}}}
+if (this.ypos<100) {
+ellipse(i,j,10,5);
+}
+else if (this.ypos<200)
+{
+ellipse(i,j,5,5);
+
+
+
+}
+}
+     }
+  }
+}
