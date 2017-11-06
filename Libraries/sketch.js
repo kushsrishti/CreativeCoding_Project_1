@@ -1,7 +1,7 @@
 var clouds=[]; ///array clouds
-cnt = 0;
-mult = 60;
-diff = 0;
+cnt = 0
+mult = 60
+diff = 0.02
 
 function setup() 
   {
@@ -11,7 +11,7 @@ function setup()
        WW = windowWidth/500;
        WH = windowHeight/10;
 
-////q,p,r,s,t,w are objects of class wave, which are orange sun arcs
+////q,p,r,s,t,w are objects of class wave, which are orange waves 
       q = new Wave(100,110,100,100); 
       p = new Wave(200,400,400,200);
       r = new Wave (400,200,300,150);
@@ -23,11 +23,11 @@ function setup()
 
 function draw() 
 {
+ 
     background(109,167,255); 
     everything();
     console.log("hfff"+p.ypos);
-
-///this instigates movement of the objects 
+////this instigates movement of the objects 
   
     q.ypos+=random(-20,20);
     p.ypos+=random(-20,30);
@@ -59,6 +59,7 @@ function draw()
 
 function everything()
 {
+
   noStroke();
   fill(43,36,59,255,200);
 
@@ -66,8 +67,6 @@ function everything()
   for(var i=0; i<600; i++)
   {
    ///this produces the waves 
-   
-   ////the sin produces the wavy effect - https://p5js.org/reference/#/p5/sin
     vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
   }
    /// produces waves according to the screen 
@@ -76,11 +75,11 @@ function everything()
     vertex(WH*0, WW*400);
     endShape(CLOSE);
     frameRate(0.7);
-  if ( diff=400) 
-  { 
+  
+  if ( diff=400){
     mult = mult - 10
   }
-}
+  }
 /// this controls the height, width, x & y positions of the orange arcs 
 class Wave 
 {
@@ -93,6 +92,7 @@ class Wave
   this.wdth=w;
   
   //console.log("jjjjj");
+
 }
  /////this produces the rising sun arcs  
 spiral()
@@ -102,8 +102,8 @@ spiral()
  
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
   if (keyIsPressed ==true) {
-  background(71,1,99,100); 
-  ///changing the opacity, keeps the wavy effect in background
+  background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
+
   fill (255,66,60,100);
  // rotate(PI/5.0);
   arc (this.xpos, this.ypos, random(10,this.hgt),  random(10,this.wdth), PI, PI);  
