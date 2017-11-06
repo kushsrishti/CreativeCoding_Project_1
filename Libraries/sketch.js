@@ -139,18 +139,25 @@ if (mouseIsPressed ==true) {
     {
 
 
-//translate(this.xpos+100, this.ypos+10);
 
+push();
   //applyMatrix(1, 10, 10, 100, 40, 50);
-rotate(PI/2.0);
+  translate(width*0.1,height*0.1);
+rotate(frameCount/10.0);
+//rotate(PI/2.0);
 if (this.ypos<200) {
-    fill (255,189,46);
-ellipse(i,j,10,5);
+fill (255,189,46);
+ellipse(i,j,50,5);
+
 }
 else if (this.ypos<500)
 {
+   translate(width*0.1,height*0.1);
+rotate(frameCount/10.0);
   fill (255,18,145); 
-ellipse(i,j,5,5);
+  push();
+ellipse(i,j,5,50);
+pop();
 
 }
 }
