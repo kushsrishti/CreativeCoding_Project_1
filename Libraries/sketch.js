@@ -1,4 +1,4 @@
-var clouds=[];
+var clouds=[]; ///array clouds
 cnt = 0
 mult = 60
 diff = 0.02
@@ -11,7 +11,8 @@ function setup()
        WW = windowWidth/500;
        WH = windowHeight/10;
 
-      q = new Wave(100,110,100,100);
+////q,p,r,s,t,w are objects of class wave, which are orange waves 
+      q = new Wave(100,110,100,100); 
       p = new Wave(200,400,400,200);
       r = new Wave (400,200,300,150);
       s = new Wave (700,350,400,200);
@@ -26,7 +27,7 @@ function draw()
     background(109,167,255); 
     everything();
     console.log("hfff"+p.ypos);
-
+////this instigates movement of the objects 
   
     q.ypos+=random(-20,20);
     p.ypos+=random(-20,30);
@@ -34,15 +35,15 @@ function draw()
     s.ypos+=random(-20,20);
     t.ypos+=random(-20,30);
     w.ypos+=random (-20,30);
-    q.xpos += random(-20,20);
+    q.xpos+= random(-20,20);
     p.xpos+=random(-20,30);
     r.xpos+=random (-20,30);
-    s.xpos += random(-20,20);
+    s.xpos+= random(-20,20);
     t.xpos+=random(-20,30);
     w.xpos+=random (-20,30);
 
 
-
+///calling method of the class using objects 
   console.log("hhh"+q.xpos);
   q.spiral();
   p.spiral();
@@ -50,9 +51,9 @@ function draw()
   s.spiral();
   t.spiral();
   w.spiral();
-   q.burst();
-   p.burst();
-   r.burst();
+  q.burst();
+  p.burst();
+  r.burst();
 //b1.spiral(clouds[0]);
 }
 
@@ -65,10 +66,12 @@ function everything()
   beginShape();
   for(var i=0; i<600; i++)
   {
-   
-    vertex(WW*i, sin(cnt-mult*i)*diff+WH);
+   ///this produces the waves 
+    vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
   }
+   /// produces waves according to the screen 
     vertex(WH*100, WW*0);
+   /// produces waves according to the screen 
     vertex(WH*0, WW*400);
     endShape(CLOSE);
     frameRate(0.7);
@@ -77,7 +80,7 @@ function everything()
   if ( diff=400)
     mult = mult - 10
   }
-
+/// this controls the height, width, x & y positions of the orange arcs 
 class Wave 
 {
   constructor(x,y,h,w) 
@@ -91,7 +94,7 @@ class Wave
   //console.log("jjjjj");
 
 }
-  
+ /////this produces the rising sun arcs  
 spiral()
   {
 
@@ -99,7 +102,7 @@ spiral()
  
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
   if (keyIsPressed ==true) {
-  background(71,1,99,100);
+  background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
 
   fill (255,66,60,100);
  // rotate(PI/5.0);
@@ -115,7 +118,7 @@ spiral()
   pop();
   }
 }
-
+///this brings the windy effect 
 burst()
 {
   if (mouseIsPressed ==true) 
