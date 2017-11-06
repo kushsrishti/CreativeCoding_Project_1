@@ -23,7 +23,6 @@ function setup()
 
 function draw() 
 {
- 
     background(109,167,255); 
     everything();
     console.log("hfff"+p.ypos);
@@ -57,10 +56,9 @@ function draw()
   r.burst();
 //b1.spiral(clouds[0]);
 }
-//wave are a fork of - https://www.openprocessing.org/sketch/382988
+
 function everything()
 {
-
   noStroke();
   fill(43,36,59,255,200);
 
@@ -76,15 +74,11 @@ function everything()
     vertex(WH*0, WW*400);
     endShape(CLOSE);
     frameRate(0.7);
-  if(diff=10)
-{ 
-   mult = mult + 500}
-  if ( diff=400)
+  if ( diff=400) 
   { 
     mult = mult - 10
   }
 }
-
 /// this controls the height, width, x & y positions of the orange arcs 
 class Wave 
 {
@@ -97,7 +91,6 @@ class Wave
   this.wdth=w;
   
   //console.log("jjjjj");
-
 }
  /////this produces the rising sun arcs  
 spiral()
@@ -109,7 +102,6 @@ spiral()
   if (keyIsPressed ==true) {
   background(71,1,99,100); 
   ///changing the opacity, keeps the wavy effect in background
-
   fill (255,66,60,100);
  // rotate(PI/5.0);
   arc (this.xpos, this.ypos, random(10,this.hgt),  random(10,this.wdth), PI, PI);  
