@@ -2,37 +2,30 @@ var clouds=[];
 cnt = 0
 mult = 60
 diff = 0.02
-var color=0;
 
-function setup() {
-createCanvas(windowWidth, windowHeight); 
+function setup() 
+  {
+      createCanvas(windowWidth, windowHeight); 
 
  
-  WW = windowWidth/500;
-  WH = windowHeight/10;
+       WW = windowWidth/500;
+       WH = windowHeight/10;
 
-  q = new Wave(100,110,100,100);
-  p = new Wave(200,400,400,200);
-  r = new Wave (400,200,300,150);
-  s = new Wave (700,350,400,200);
-  t = new Wave (900,100,160,75);
-  w = new Wave (600,400,1200,800);
+      q = new Wave(100,110,100,100);
+      p = new Wave(200,400,400,200);
+      r = new Wave (400,200,300,150);
+      s = new Wave (700,350,400,200);
+      t = new Wave (900,100,160,75);
+      w = new Wave (600,400,1200,800);
 
-
-  acceleration = random(1) / 5;
-  velocity = random(5, 10);
-  a = random(0, TWO_PI);
-} 
+   } 
 
 function draw() 
-
 {
- background(109,167,255); 
-
-  everything();
-  
  
-  console.log("hfff"+p.ypos);
+    background(109,167,255); 
+    everything();
+    console.log("hfff"+p.ypos);
 
   
     q.ypos+=random(-20,20);
@@ -57,14 +50,10 @@ function draw()
   s.spiral();
   t.spiral();
   w.spiral();
-
- q.burst();
- p.burst();
- r.burst();
-
-
-
-  //b1.spiral(clouds[0]);
+   q.burst();
+   p.burst();
+   r.burst();
+//b1.spiral(clouds[0]);
 }
 
 function everything()
@@ -74,27 +63,25 @@ function everything()
   fill(43,36,59,255,200);
 
   beginShape();
-  for(var i=0; i<600; i++){
+  for(var i=0; i<600; i++)
+  {
    
     vertex(WW*i, sin(cnt-mult*i)*diff+WH);
   }
-
-  vertex(WH*100, WW*0);
-
-  vertex(WH*0, WW*400);
-  endShape(CLOSE);
-  frameRate(0.7);
-  
+    vertex(WH*100, WW*0);
+    vertex(WH*0, WW*400);
+    endShape(CLOSE);
+    frameRate(0.7);
   if(diff=10)
-
     mult = mult + 15
   if ( diff=400)
     mult = mult - 10
   }
 
-class Wave {
-  
-constructor(x,y,h,w) {
+class Wave 
+{
+  constructor(x,y,h,w) 
+{
 
   this.xpos=x;
   this.ypos=y;
@@ -123,26 +110,25 @@ spiral()
   arc (this.xpos+30, this.ypos, random(20,this.hgt),random(20,this.wdth), PI, TWO_PI);
 //  translate(this.xpos+100, this.ypos+10);
  rotate(PI/0.5);
+ push();
   arc (this.xpos-20,this.ypos, random(30,this.hgt), random(30, this.wdth), PI, TWO_PI);
+  pop();
   }
 }
 
 burst()
 {
-if (mouseIsPressed ==true) {
-
+  if (mouseIsPressed ==true) 
+{
   background(0,135,79,100);
   console.log("hhhhhhhhhhhhhhhh");
    for(var i = 0;  i<= mouseX; i+=20)
-   {
+{
     for(var j = 0; j <= mouseY; j+=20)
-    {
-
-
-
+{
 push();
   //applyMatrix(1, 10, 10, 100, 40, 50);
-  translate(width*0.1,height*0.1);
+translate(width*0.1,height*0.1);
 rotate(frameCount/10.0);
 //rotate(PI/2.0);
 if (this.ypos<200) {
@@ -159,9 +145,9 @@ rotate(frameCount/10.0);
 ellipse(i,j,5,50);
 pop();
 
-}
-}
-}
+            }
+          }
+       }
      }
   }
 }
