@@ -1,7 +1,7 @@
 var clouds=[]; ///array clouds
-cnt = 0
-mult = 60
-diff = 0.02
+cnt = 0;
+mult = 60;
+diff = 0;
 
 function setup() 
   {
@@ -76,9 +76,9 @@ function everything()
     vertex(WH*0, WW*400);
     endShape(CLOSE);
     frameRate(0.7);
-  //if(diff=10)
-//{ fill(255);
-    //mult = mult + 15}
+  if(diff=10)
+{ 
+   mult = mult + 500}
   if ( diff=400)
   { 
     mult = mult - 10
