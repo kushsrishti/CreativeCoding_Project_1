@@ -6,8 +6,7 @@ diff = 0.02
 function setup() 
   {
       createCanvas(windowWidth, windowHeight); 
-fill(43,36,59,255,200);
- 
+
        WW = windowWidth/500;
        WH = windowHeight/10;
 
@@ -24,7 +23,7 @@ fill(43,36,59,255,200);
 function draw() 
 {
  
-    //background(109,167,255); 
+    background(109,167,255); 
     everything();
     console.log("hfff"+p.ypos);
 ////this instigates movement of the objects 
@@ -61,7 +60,7 @@ function everything()
 {
 
   noStroke();
-  //fill(43,36,59,255,200);
+  fill(43,36,59,255,200);
 
   beginShape();
   for(var i=0; i<600; i++)
@@ -102,8 +101,8 @@ spiral()
    noStroke();
  
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
-  //if (keyIsPressed ==true) {
-  //background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
+  if (keyIsPressed ==true) {
+  background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
 
   fill (255,66,60,100);
  // rotate(PI/5.0);
@@ -118,13 +117,13 @@ spiral()
   arc (this.xpos-20,this.ypos, random(30,this.hgt), random(30, this.wdth), PI, TWO_PI);
   pop();
   }
-//}
+}
 ///this brings the windy effect 
 burst()
 {
-  //if (mouseIsPressed ==true) 
+  if (mouseIsPressed ==true) 
 {
-  //background(0,135,79,100);
+  background(0,135,79,100);
   console.log("hhhhhhhhhhhhhhhh");
    for(var i = 0;  i<= mouseX; i+=20)
 {
