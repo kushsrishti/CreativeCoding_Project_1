@@ -6,7 +6,7 @@ diff = 0.02
 function setup() 
   {
       createCanvas(windowWidth, windowHeight); 
-
+fill(43,36,59,255,200);
  
        WW = windowWidth/500;
        WH = windowHeight/10;
@@ -24,7 +24,7 @@ function setup()
 function draw() 
 {
  
-    background(109,167,255); 
+    //background(109,167,255); 
     everything();
     console.log("hfff"+p.ypos);
 ////this instigates movement of the objects 
@@ -61,23 +61,23 @@ function everything()
 {
 
   noStroke();
-  fill(43,36,59,255,200);
+  //fill(43,36,59,255,200);
 
   beginShape();
   for(var i=0; i<600; i++)
   {
    ///this produces the waves 
    ///sin produces waves, refernce p5 ref
-    vertex(WW*i, sin(cnt-mult*i)*diff+WH); 
+    vertex(WW*i, sin(cnt-mult*i)*400+WH); 
   }
    /// produces waves according to the screen 
     vertex(WH*100, WW*0);
    /// produces waves according to the screen 
     vertex(WH*0, WW*400);
     endShape(CLOSE);
-    frameRate(0.7);
+    frameRate(1.2);
   
-  if ( diff=400){
+ if ( diff=400){
     mult = mult - 10
   }
   }
@@ -102,8 +102,8 @@ spiral()
    noStroke();
  
    console.log("hhhhhhhhhhhhhhhh"+this.ypos);
-  if (keyIsPressed ==true) {
-  background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
+  //if (keyIsPressed ==true) {
+  //background(71,1,99,100); ///changing the opacity, keeps the wavy effect in background
 
   fill (255,66,60,100);
  // rotate(PI/5.0);
@@ -118,13 +118,13 @@ spiral()
   arc (this.xpos-20,this.ypos, random(30,this.hgt), random(30, this.wdth), PI, TWO_PI);
   pop();
   }
-}
+//}
 ///this brings the windy effect 
 burst()
 {
-  if (mouseIsPressed ==true) 
+  //if (mouseIsPressed ==true) 
 {
-  background(0,135,79,100);
+  //background(0,135,79,100);
   console.log("hhhhhhhhhhhhhhhh");
    for(var i = 0;  i<= mouseX; i+=20)
 {
@@ -135,7 +135,7 @@ push();
 translate(width*0.1,height*0.1);
 rotate(frameCount/10.0);
 //rotate(PI/2.0);
-if (this.ypos<200) {
+if (this.ypos<500) {
 fill (255,189,46);
 ellipse(i,j,50,5);
 
